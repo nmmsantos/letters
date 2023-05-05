@@ -1,5 +1,6 @@
 import { FontAwesomeIcon as I } from '@fortawesome/react-fontawesome';
 import { useCallback } from 'react';
+import Tooltip from '../Tooltip';
 
 interface PayloadFieldProps {
     payload: string;
@@ -34,11 +35,13 @@ export default function PayloadField({ payload, help }: PayloadFieldProps) {
                         </span>
                     </div>
                     <div className="control">
-                        <button className="button is-large is-info is-outlined" onPointerUp={copy}>
-                            <span className="icon is-small">
-                                <I icon="clipboard" />
-                            </span>
-                        </button>
+                        <Tooltip body={<span style={{ whiteSpace: 'nowrap' }}>Copy to clipboard</span>}>
+                            <button className="button is-large is-info is-outlined" onPointerUp={copy}>
+                                <span className="icon is-small">
+                                    <I icon="clipboard" />
+                                </span>
+                            </button>
+                        </Tooltip>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,112 @@
+.Envelope {
+  width: 220px;
+  height: 120px;
+  position: relative;
+  background: #ad6605;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px -3px #989898;
+}
+
+.Top,
+.Bottom {
+  border-left: 110px solid transparent;
+  border-right: 110px solid transparent;
+  width: 0;
+  height: 0;
+  position: relative;
+}
+
+.Top {
+  border-bottom: 80px solid #c27914;
+  top: -80px;
+  transform-origin: bottom;
+  z-index: 3;
+  transition: all .8s ease;
+  transform: rotateX(0deg);
+}
+
+.Bottom {
+  border-bottom: 80px solid #fec04f;
+  top: -40px;
+  z-index: 4;
+}
+
+.Left,
+.Right {
+  width: 0;
+  height: 0;
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  top: 0;
+  z-index: 4;
+}
+
+.Left {
+  border-left: 110px solid #fe9019;
+  position: absolute;
+  left: 0;
+}
+
+.Right {
+  border-right: 110px solid #fe9019;
+  position: absolute;
+  right: 0;
+}
+
+.Back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: all 1s ease;
+  z-index: 3;
+  transition-delay: 0.4s;
+  top: -35%;
+}
+
+.Paper {
+  width: 90%;
+  height: 90%;
+  background: #f6f8e7;
+  margin: 6px auto 0;
+  box-shadow: 0px 0px 2px 0px #909090;
+  transition: all 0.5s ease-out;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.Envelope.Fold .Back {
+  z-index: 3;
+  transition-delay: 0.3s;
+  top: 0;
+}
+
+.Envelope.Fold .Top {
+  transition-delay: .6s;
+  transform: rotateX(180deg);
+  z-index: 6;
+}
+
+.Paper .Line {
+  height: 2px;
+  background: #999;
+  width: 10%;
+  margin: 4px 0;
+}
+
+.Paper .Line.One {
+  width: 50%;
+}
+
+.Paper .Line.Two {
+  width: 30%;
+}
+
+.Paper .Line.Three {
+  width: 80%;
+}

@@ -3,7 +3,7 @@ import * as solid from '@fortawesome/free-solid-svg-icons';
 import 'bulma/css/bulma.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
+import App from './containers/App';
 
 library.add(
     solid.faKey,
@@ -16,6 +16,7 @@ library.add(
     solid.faEyeSlash,
     solid.faEnvelope,
     solid.faEnvelopeOpen,
+    solid.faXmark,
 );
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
