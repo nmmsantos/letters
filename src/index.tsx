@@ -16,6 +16,7 @@ library.add(
     solid.faEyeSlash,
     solid.faEnvelope,
     solid.faEnvelopeOpen,
+    solid.faXmark,
 );
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
