@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Envelope from '../components/Envelope';
 import PasswordField from '../components/PasswordField';
 import PayloadField from '../components/PayloadField';
 import { CryptoTasks } from '../helpers/Crypto';
@@ -21,6 +22,9 @@ function NewLetter() {
                 ) : (
                     <PayloadField payload={keyPayload} help="Send this link to a friend so he can write back a letter only you can read." />
                 )}
+            </div>
+            <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                <Envelope width={500} />
             </div>
         </section>
     );
