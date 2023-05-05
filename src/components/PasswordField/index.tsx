@@ -1,6 +1,7 @@
 import { FontAwesomeIcon as I } from '@fortawesome/react-fontawesome';
-import { useCallback, useState } from 'react';
-import { Password } from './Crypto';
+import { useState } from 'react';
+import CopyToClipboard from '../../helpers/CopyToClipboard';
+import { Password } from '../../helpers/Crypto';
 
 interface PasswordFieldProps {
     password: string;
@@ -11,10 +12,6 @@ interface PasswordFieldProps {
 
 export default function PasswordField({ password, onPasswordChange, help, onSubmit }: PasswordFieldProps) {
     const [visible, setVisible] = useState(false);
-
-    const copy = useCallback(async () => {
-        await navigator.clipboard.writeText(password);
-    }, [password]);
 
     return (
         <div className="field">
@@ -33,6 +30,7 @@ export default function PasswordField({ password, onPasswordChange, help, onSubm
                             onChange={(e) => onPasswordChange(e.target.value)}
                             onFocus={(e) => e.target.select()}
                             autoFocus
+                            autoComplete="off"
                         />
                         <span className="icon is-small is-left">
                             <I icon="key" />
@@ -53,7 +51,7 @@ export default function PasswordField({ password, onPasswordChange, help, onSubm
                         </button>
                     </div>
                     <div className="control">
-                        <button className="button is-large is-info is-outlined" onPointerUp={copy}>
+                        <button className="button is-large is-info is-outlined" onPointerUp={() => CopyToClipboard(password)}>
                             <span className="icon is-small">
                                 <I icon="clipboard" />
                             </span>
@@ -61,7 +59,7 @@ export default function PasswordField({ password, onPasswordChange, help, onSubm
                     </div>
                     {onSubmit && (
                         <div className="control">
-                            <button className="button is-large is-link is-outlined" onPointerUp={(e) => onSubmit()}>
+                            <button className="button is-large is-link is-outlined" onPointerUp={() => onSubmit()}>
                                 <span className="icon is-small">
                                     <I icon="right-long" />
                                 </span>

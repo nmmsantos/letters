@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { CryptoTasks } from './Crypto';
-import PasswordField from './PasswordField';
-import PayloadField from './PayloadField';
+import PasswordField from '../components/PasswordField';
+import PayloadField from '../components/PayloadField';
+import { CryptoTasks } from '../helpers/Crypto';
 
 function NewLetter() {
     const [pasword, setPassword] = useState('');
